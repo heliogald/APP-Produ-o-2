@@ -44,11 +44,9 @@ class ProdutoController {
 
   static async deletarProdutoPorId(req, res) {
     const { id } = req.params;
-
     try {
       await produtoService.deletarProdutoPorId(id);
-
-      res.status(200).send({ message: "Produto deletada com sucesso!" });
+      res.status(200).send({ message: "Produto deletado com sucesso!" });
     } catch (error) {
       console.log("Message error: ", error.message);
       res.status(400).send({ message: error.message });
