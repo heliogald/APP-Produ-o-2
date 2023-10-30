@@ -29,6 +29,7 @@ class ItemController  {
     try {
       const { id } = req.params;
       const item = await itemService.buscarItemPorId(id);
+      console.log(item)
       res.status(200).json(item);
     } catch (error) {
       console.log("Message error: ", error.message);

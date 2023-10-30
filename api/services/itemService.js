@@ -46,7 +46,7 @@ class ItemService {
       throw new Error("Item informado não cadastrado!");
     }
 
-    return cliente;
+    return item;
   }
   async deletarItemPorId(id) {
     const item = await database.itens.findOne({
