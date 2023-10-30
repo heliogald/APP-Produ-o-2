@@ -9,6 +9,15 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      cliente_id:{
+        type: Sequelize.UUID,
+        references: {
+          model: 'clientes',
+          key: 'id'
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
+      },
       equipamento_id:{
         type: Sequelize.UUID,
         references: {

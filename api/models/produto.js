@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   produto.init({
+    cliente_id: DataTypes.UUID,
     equipamento_id: DataTypes.UUID,
     iten_id: DataTypes.UUID
     
