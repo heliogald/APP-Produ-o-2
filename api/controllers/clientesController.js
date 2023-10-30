@@ -10,7 +10,7 @@ class ClienteController {
       });
       res.status(201).json(cliente);
     } catch (error) {
-      console.log("Messag error: ", error.message);
+      console.log("Message error: ", error.message);
       res.status(400).send({ message: error.message });
     }
   }

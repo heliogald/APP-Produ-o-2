@@ -4,20 +4,11 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable("itens", {
       id: {
-        allowNull: false,
+        allowNull: false,        
         primaryKey: true,
-        type: Sequelize.INTEGER,
-        defaultValue: Sequelize.UUID,
-      },
-      itens_id: {
         type: Sequelize.UUID,
-        references: {
-          model: "equipamentos",
-          key: "id",
-        },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE'
-      },
+        defaultValue: Sequelize.UUID
+      },      
       codigo: {
         type: Sequelize.STRING,
       },

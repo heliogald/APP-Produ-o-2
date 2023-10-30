@@ -11,19 +11,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       equipamentos.belongsToMany(models.clientes, {
-        through: models.usuarios_roles,
-        as: 'roles_do_usuario',
+        through: models.produto,
+        as: 'equipamento_do_cliente',
         foreignKey: 'equipamento_id'
       })
       equipamentos.belongsToMany(models.itens, {
-        through: models.roles_permissoes,
-        as: 'roles_das_permissoes',
-        foreignKey: 'equipamento_id'
+        through: models.produto,
+        as: 'itens_do_equipamento',
+        foreignKey: 'itens_id'
       })
     }
   }
-  equipamentos.init({
-    equipamento_id: DataTypes.UUID,
+  equipamentos.init({    
     equipamentoModelo: DataTypes.STRING,
     numeroDeSerie: DataTypes.STRING,
     dataDeLiberacao: DataTypes.DATE
